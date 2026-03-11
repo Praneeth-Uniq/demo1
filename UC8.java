@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class UC8 {
 
-    // 1. CharacterPattern Class (Same as UC7)
+    
     private static class CharacterPattern {
         private final String[] pattern;
 
@@ -17,10 +17,9 @@ public class UC8 {
     }
 
     public static void main(String[] args) {
-        // 2. Initialize the Registry (Map)
+      
         Map<Character, CharacterPattern> patternMap = new HashMap<>();
         
-        // Populating the registry
         patternMap.put('O', new CharacterPattern(new String[]{
             "  *** ", " * * ", " * * ", " * * ", " * * ", " * * ", "  *** "
         }));
@@ -33,29 +32,26 @@ public class UC8 {
             "  **** ", " * ", " * ", "  *** ", "      *", "      *", " **** "
         }));
 
-        // 3. Render the word "OOPS"
         renderBanner("OOPS", patternMap);
     }
 
-    /**
-     * Dynamically renders a word as a banner using the provided pattern map.
-     */
+    
     public static void renderBanner(String word, Map<Character, CharacterPattern> map) {
-        // We assume a 7-line height for all characters
+       
         for (int i = 0; i < 7; i++) {
             StringBuilder lineBuilder = new StringBuilder();
             
-            // Loop through each character in the input word
+          
             for (char c : word.toUpperCase().toCharArray()) {
                 CharacterPattern cp = map.get(c);
                 if (cp != null) {
                     lineBuilder.append(cp.getLine(i));
                 } else {
-                    // Fallback for missing characters (empty space)
+                    
                     lineBuilder.append("         "); 
                 }
             }
-            // Print the assembled line
+            
             System.out.println(lineBuilder.toString());
         }
     }
