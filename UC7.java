@@ -1,7 +1,6 @@
 public class UC7 {
 
-    // 1. Static Inner Class to encapsulate Character Data
-    // This follows the Single Responsibility Principle
+   
     private static class CharacterPattern {
         private final char character;
         private final String[] pattern;
@@ -22,7 +21,7 @@ public class UC7 {
     }
 
     public static void main(String[] args) {
-        // 2. Instantiate Character Objects
+      
         CharacterPattern o = new CharacterPattern('O', new String[]{
             "  *** ", " * * ", " * * ", " * * ", " * * ", " * * ", "  *** "
         });
@@ -35,8 +34,7 @@ public class UC7 {
             "  **** ", " * ", " * ", "  *** ", "      *", "      *", " **** "
         });
 
-        // 3. Build the Banner using the Objects
-        // We now pull data from the objects 'o', 'p', and 's'
+      
         String[] bannerLines = new String[7];
         for (int i = 0; i < 7; i++) {
             bannerLines[i] = String.join("", 
@@ -47,7 +45,7 @@ public class UC7 {
             );
         }
 
-        // 4. Render to Console
+      
         for (String line : bannerLines) {
             System.out.println(line);
         }
